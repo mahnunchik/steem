@@ -1,0 +1,38 @@
+
+os: osx
+osx_image: xcode7.3
+language: cpp
+env:
+  global:
+    - OPENSSL_ROOT_DIR=/usr/local/opt/openssl
+    - STEEM_VERSION=0.12.2
+
+install:
+  - brew update
+  - brew upgrade cmake git autoconf automake libtool openssl
+  - brew install qt5 python3
+  # Downgrade boost to 1.58.0
+  - brew unlink boost
+  - brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/1fa330ce7a067406ff05392dead86cccdc0794bd/Formula/boost.rb
+  # Fix for "shell_session_update: command not found"
+  - rvm get head
+
+before_script:
+  - git clone https://github.com/steemit/steem.git
+  - cd ${TRAVIS_BUILD_DIR}/steem
+  - git checkout v${STEEM_VERSION}
+  - git submodule update --init --recursive
+
+script:
+  - cd ${TRAVIS_BUILD_DIR}/steem
+  - cmake -DENABLE_INSTALLER=ON .
+  - make
+  - make install
+  - tar -cvzf steem-${STEEM_VERSION}-Darwin.tgz -C ./install .
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "eS1BHRsHutZ9q+grBLVIH/nWKwzGlqGhpoACgByrGDjfz7pXmuoZekk7//26V/s4ZncF7w9Tj9KiB1vGONw/MUwK1PCWWBCz3H3DlJpLa5B5TyUCf2KOUMSUn8oAcpq5Jvnqeh0yW2C3u5Avxv0/u+C5Z0z9Q+ROhr0LTVkL6WcVxiWCqkH+hLhr85b+Q1oBgWnk94ArBOWxBA6pEstnt4ESGtcABjJUWkh9EvheqGBm0DzXaZVa7356ut83dwiIPpUMUxb7y56KWj4HjI6FXPXjO6awgGg+onfwaddY9Oe00GXZmzp1wIrxLWcUyJyTW4l6kz28/YgQhVBEcebyGH9kSdiaFPfuNFmmMjh5JjZsf4Ul3z2+I48Lwv36ZcvJoxfCBGhdMq/1nuaBxdbjo5yT2ULeobxpAMIhBaGfSS5+DrSJoS6lBcMr2G5wuHFCZMeyW6iGf7UgkT9phL0SwtMiO7OnGouBPKn9YI5g17oSFgzjYLEXry6tZP+K1Lo7NkMrmpd93slcApGEzhef9vpAUpOA9AaaZqkMprN3lm6yIa4ZHRlCsCl0JELup1pQOZ27kFcYXnptE82BfppVLJ+VUz/rIPtKU/0vMhCNjXJP6Vb8qlrxLSUtT0YFT4bCcGRRJAWdimJ6rq8R+hGM58r1hDNwJjc1FCwZZe0N5ps="
+  file: steem-${STEEM_VERSION}-Darwin.tgz
+  skip_cleanup: true
