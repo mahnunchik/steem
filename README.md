@@ -1,4 +1,4 @@
-# Steem Binaries [![Build Status](https://travis-ci.org/mahnunchik/steem.svg?branch=master)](https://travis-ci.org/mahnunchik/steem)
+# Steem Binaries [![Build Status](https://travis-ci.org/mahnunchik/steem.svg?branch=master)](https://travis-ci.org/mahnunchik/steem) [![Run Status](https://api.shippable.com/projects/57ab51d9f0111a1000ef69ff/badge?branch=master)](https://app.shippable.com/projects/57ab51d9f0111a1000ef69ff)
 
 [Steemit](https://steemit.com/) is a social media platform where everyone gets paid for creating and curating content. It leverages a robust digital points system, called Steem, that supports real value for digital rewards through market price discovery and liquidity.
 
