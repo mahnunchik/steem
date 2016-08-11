@@ -7,9 +7,14 @@
 This repository contains build script to produce binaries of `steemd` program for the following platforms:
 
 * Mac OS
-* Linux (Coomming soon)
+* Linux
 
-All files are [automatically](https://travis-ci.org/mahnunchik/steem) compiled from [sources](https://github.com/steemit/steem) and uploaded to the [releases page](https://github.com/mahnunchik/steem/releases).
+All files are automatically compiled from [sources](https://github.com/steemit/steem) and uploaded to the [releases page](https://github.com/mahnunchik/steem/releases).
+
+Build environments:
+
+* Mac OS CI - [travis](https://travis-ci.org/mahnunchik/steem)
+* Linux CI - [shippable](https://app.shippable.com/projects/57ab51d9f0111a1000ef69ff/status/)
 
 ## How to Mine
 
@@ -26,4 +31,3 @@ Config clarification can be found here: https://github.com/steemit/steem/issues/
 
 * [Steem](https://github.com/steemit/steem)
 * [Steemit](https://steemit.com/)
-* [Build environment](https://travis-ci.org/mahnunchik/steem)
