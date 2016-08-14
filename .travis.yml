@@ -20,7 +20,7 @@ install:
 before_script:
   - git clone https://github.com/steemit/steem.git
   - cd ${TRAVIS_BUILD_DIR}/steem
-  - git checkout v${STEEM_VERSION}
+  - git checkout ${STEEM_VERSION}
   - git submodule update --init --recursive
 
 script:

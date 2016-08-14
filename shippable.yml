@@ -25,7 +25,7 @@ build:
       ruby
     - git clone https://github.com/steemit/steem.git
     - cd steem
-    - git checkout v${STEEM_VERSION}
+    - git checkout ${STEEM_VERSION}
     - git submodule update --init --recursive
     - cmake -DENABLE_INSTALLER=ON .
     - make
