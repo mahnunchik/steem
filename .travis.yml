@@ -28,7 +28,8 @@ script:
   - cmake -DENABLE_INSTALLER=ON .
   - make
   - make install
-  - tar -cvzf steem-${STEEM_VERSION}-Darwin.tgz -C ./install .
+  - mv install steem
+  - tar -cvzf steem-${STEEM_VERSION}-Darwin.tgz steem
 
 deploy:
   provider: releases

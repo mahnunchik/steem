@@ -30,7 +30,8 @@ build:
     - cmake -DENABLE_INSTALLER=ON .
     - make
     - make install
-    - tar -cvzf steem-${STEEM_VERSION}-Linux.tgz -C ./install .
+    - mv install steem
+    - tar -cvzf steem-${STEEM_VERSION}-Linux.tgz steem
   on_success:
     - gem install dpl
     - dpl
@@ -39,3 +40,4 @@ build:
       --api-key=$GITHUB_API_KEY
       --overwrite=true
       --file=steem-${STEEM_VERSION}-Linux.tgz
+      || echo "Done!"
