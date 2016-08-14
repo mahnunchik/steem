@@ -5,7 +5,7 @@ language: cpp
 env:
   global:
     - OPENSSL_ROOT_DIR=/usr/local/opt/openssl
-    - STEEM_VERSION=0.12.2
+    - STEEM_VERSION=0.13.0-rc3
 
 install:
   - brew update
