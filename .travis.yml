@@ -15,7 +15,7 @@ install:
   - brew unlink boost
   - brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/1fa330ce7a067406ff05392dead86cccdc0794bd/Formula/boost.rb
   # Fix for "shell_session_update: command not found"
-  - rvm get head
+  - rvm get stable --auto-dotfiles
 
 before_script:
   - git clone https://github.com/steemit/steem.git
