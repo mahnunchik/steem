@@ -1,7 +1,7 @@
 language: none
 env:
   global:
-    - STEEM_VERSION=v0.13.0
+    - STEEM_VERSION=v0.14.0rc1
     - secure: aoy5FuqEVT4v6YkCfxlGnYafGG2wV1sUFjIG9WEvD/Uzgljz0cEYgtf8kJsS1N+U2cg8IYSzxfgQjAZJtgViAOdwXPJLhOQs/NVWN1dXJQNbsSfPkF0gEbnTjRaIWOqICWo4obkmnhMa+w7Ypf/UVa83Pp6s6hzz+D5zLudtTePHAA+CkiXgCh8WCnPLmRQqGpj9saup4zBR8990N+E/trJX7/A602ook0jo5HDZu+NXiOD94F88ZO9cvrLUdWAW7hdJXgTRr5r+3cE+amhqP98P6A3Ar/lzVJDBL9z3rUO4gSBRNs9C1wZYT+eiGNve6IKIE2x4IesCPmMKkE2cEQ==
 
 build:
