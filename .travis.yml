@@ -7,10 +7,6 @@ env:
     - OPENSSL_ROOT_DIR=/usr/local/opt/openssl
     - STEEM_VERSION=v0.14.0rc1
 
-before_install:
-  - rvm get stable --auto-dotfiles
-  - rvm install 2.3.0
-
 install:
   - brew update
   - brew upgrade cmake git autoconf automake libtool openssl
